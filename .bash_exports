@@ -15,6 +15,7 @@ PATH=$PATH:/sbin
 PATH=$PATH:/usr/X11/bin
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/share/npm/bin
+PATH=$PATH:~/bin
 
 export PATH
 
