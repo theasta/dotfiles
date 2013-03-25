@@ -92,6 +92,9 @@ if [ ! -d "$HOME/.vim/bundle/neobundle.vim" ]; then
   git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
 
+# vimproc
+# cd $HOME/.vim/bundle/vimproc && make -f make_mac.mak
+
 # if no .vimrc.bundles.local, create one
 if [ ! -f ~/.vimrc.bundles.local ] ; then
     echo "let g:spf13_bundle_groups=['general']" >> ~/.vimrc.bundles.local
