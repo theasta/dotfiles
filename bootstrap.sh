@@ -40,25 +40,28 @@ if [[ $? != 0 ]] ; then
   # brew link won't work if user doesn't have proper permissions so ask for them
   sudo chown -R ${USER} /usr/local/bin
   sudo chown -R ${USER} /usr/local/opt
+  sudo chown -R ${USER} /usr/local/lib
   e_header "Installing Homebrew"
   true | /usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-  e_header "Running Homebrew doctor"
-  brew doctor
+
+  # If Brew isn't installed by now, something exploded. We gots to quit!
+  which -s brew
   if [[ $? != 0 ]] ; then
-    exit 1;
+      e_error "Brew should be installed. It isn't. Aborting."
+      exit 1
   fi
+else
+    # Make sure we’re using the latest Homebrew
+    e_header "Updating Homebrew"
+    brew update
 fi
 
-# If Brew isn't installed by now, something exploded. We gots to quit!
-which -s brew
+e_header "Running Homebrew doctor"
+brew doctor
 if [[ $? != 0 ]] ; then
-  e_error "Brew should be installed. It isn't. Aborting."
-  exit 1
+    e_error "Brew Doctor threw a warning. Aborting."
+    exit 1;
 fi
-
-# Make sure we’re using the latest Homebrew
-e_header "Updating Homebrew"
-brew update
 
 # Upgrade any already-installed formulae
 e_header "Upgrading Homebrew formulae"
@@ -78,6 +81,10 @@ git --version &>/dev/null
 if [[ $? != 0 ]] ; then
   e_error "Git should be installed. It isn't. Aborting."
   exit 1
+fi
+
+if [ ! -d "$HOME/.vim/bundle" ]; then
+  mkdir -p $HOME/.vim/bundle
 fi
 
 if [ ! -d "$HOME/.vim/bundle/neobundle.vim" ]; then
