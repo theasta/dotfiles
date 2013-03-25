@@ -1,0 +1,51 @@
+# PATH
+# reset
+# export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+# prepend
+# export PATH=/usr/local/mysql/bin:/another/path:$PATH
+# append
+# export PATH=$PATH:/usr/local/mysql/bin:/another/path
+#
+#/usr/local/bin is before /usr/bin so we can use local version of git,..
+PATH=/usr/local/bin
+PATH=$PATH:/usr/bin
+PATH=$PATH:/bin
+PATH=$PATH:/usr/sbin
+PATH=$PATH:/sbin
+PATH=$PATH:/usr/X11/bin
+PATH=$PATH:/usr/local/mysql/bin
+PATH=$PATH:/usr/local/share/npm/bin
+
+export PATH
+
+# NODE_PATH
+
+# node will search in the following locations:
+#1: $HOME/.node_modules
+#2: $HOME/.node_libraries
+#3: $PREFIX/lib/node
+
+# NODE_PATH=/usr/local/lib/node_modules
+# NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+# export NODE_PATH
+
+# Make vim the default editor
+export EDITOR="vim"
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+
+# timestamps for bash history. www.debian-administration.org/users/rossen/weblog/1
+# saved for later analysis
+HISTTIMEFORMAT='%F %T '
+export HISTTIMEFORMAT
+
+# Make some commands not show up in history
+export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+
+#enables color for iTerm
+export TERM=xterm-color
