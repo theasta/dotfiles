@@ -171,18 +171,6 @@
     let mapleader = ","
     let g:mapleader = ","
 
-    " Easier moving in tabs and windows
-    " The lines conflict with the default digraph mapping of <C-K>
-    " If you prefer that functionality, add let g:theasta_easyWindows = 1
-    " in your .vimrc.bundles.local file
-
-    if exists('g:theasta_easyWindows')
-        map <C-J> <C-W>j<C-W>_
-        map <C-K> <C-W>k<C-W>_
-        map <C-L> <C-W>l<C-W>_
-        map <C-H> <C-W>h<C-W>_
-    endif
-
     " Use the arrows to something useful
     map <right> :bn<cr>
     map <left> :bp<cr>
@@ -202,9 +190,7 @@
     nmap <leader>f8 :set foldlevel=8<CR>
     nmap <leader>f9 :set foldlevel=9<CR>
 
-    " Toggle search highlighting
-    nmap <silent> <leader>/ :set invhlsearch<CR>
-
+    " Reset search highlighting
     map <silent> <leader><cr> :noh<cr>
 
     " Shortcuts
@@ -212,17 +198,6 @@
     cmap cwd lcd %:p:h
     cmap cd. lcd %:p:h
     map <leader>cd :cd %:p:h<cr>
-
-    " Visual shifting (does not exit Visual mode)
-    vnoremap < <gv
-    vnoremap > >gv
-
-    " Fix home and end keybindings for screen, particularly on mac
-    " - for some reason this fixes the arrow keys too. huh.
-    map [F $
-    imap [F $
-    map [H g0
-    imap [H g0
 
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
@@ -467,11 +442,11 @@
         let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
         let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 
-        " Use honza's snippets.
+        " Use my snippets.
         let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
 
         " Enable neosnippet snipmate compatibility mode
-        let g:neosnippet#enable_snipmate_compatibility = 1        
+        let g:neosnippet#enable_snipmate_compatibility = 1
 
         " For snippet_complete marker.
         if has('conceal')
