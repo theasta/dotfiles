@@ -323,11 +323,12 @@
     " }
 
     " ctrlp {
-        noremap <leader>t :CtrlP<cr>
+        noremap <leader>p :CtrlP<cr>
+        nmap <leader>f :CtrlP<CR><C-\>w
         let g:ctrlp_working_path_mode = ''
-        let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
             \ 'file': '\.exe$\|\.so$\|\.dll$' }
+            "\ 'dir':  '\vresources$|data$',
+            "\ 'file': '\.exe$\|\.so$\|\.dll$' }
     "}
 
     " TagBar {
