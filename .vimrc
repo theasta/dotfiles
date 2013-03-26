@@ -326,7 +326,7 @@
         noremap <leader>p :CtrlP<cr>
         nmap <leader>f :CtrlP<CR><C-\>w
         let g:ctrlp_working_path_mode = ''
-            \ 'file': '\.exe$\|\.so$\|\.dll$' }
+        "let g:ctrlp_custom_ignore = {
             "\ 'dir':  '\vresources$|data$',
             "\ 'file': '\.exe$\|\.so$\|\.dll$' }
     "}
@@ -476,7 +476,17 @@
     """"""""""""""""""""""""""""""
     " => Colorscheme
     """"""""""""""""""""""""""""""
-    colorscheme mustang
-    colors mustang
+    colorscheme molokai
+    colors molokai
 
+" }
+
+" Functions {
+
+" }
+
+" Use local vimrc if available {
+    if filereadable(expand("~/.vimrc.local"))
+        source ~/.vimrc.local
+    endif
 " }
