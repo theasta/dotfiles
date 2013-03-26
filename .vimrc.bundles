@@ -140,10 +140,10 @@
 
     " PHP
     if count(g:spf13_bundle_groups, 'php')
-        "NeoBundle 'vim-scripts/phpfolding.vim'
+        NeoBundle 'vim-scripts/phpfolding.vim'
+        NeoBundle 'shawncplus/phpcomplete.vim'
         "NeoBundle 'vim-scripts/php.vim--Hodge'
-        NeoBundle 'spf13/PIV'
-        NeoBundle 'arnaud-lb/vim-php-namespace'
+        "NeoBundle 'arnaud-lb/vim-php-namespace'
     endif
 
     " Python
