@@ -102,17 +102,12 @@
         " Broken down into easily includeable segments
         set statusline=%<%f\                     " Filename
         set statusline+=%w%h%m%r                 " Options
-        "set statusline+=%{fugitive#statusline()} " Git Hotness
+        if exists('*fugitive#statusline')
+            set statusline+={fugitive#statusline()}  " Git Hotness
+        endif
         set statusline+=\ [%{&ff}/%Y]            " Filetype
         set statusline+=\ [%{getcwd()}]          " Current dir
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-
-        "set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\  
-        "set statusline +=%{fugitive#statusline()}
-        "set statusline +=%#warningmsg#
-        "set statusline +=%{SyntasticStatuslineFlag()}
-        "set statusline +=%*
-        "set statusline +=\ %=%-16(\ %l,%c-%v\ %)%P
 
     endif
 
