@@ -1,10 +1,10 @@
 # My dotfiles.
 
 Based upon :
-[Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles/)
-[Paul Irish's dotfiles](https://github.com/paulirish/dotfiles/)
-[Ben Alman's dotfiles installer](https://github.com/cowboy/dotfiles/blob/master/bin/dotfiles)
-[spf13-vim](https://github.com/spf13/spf13-vim)
+* [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles/)
+* [Paul Irish's dotfiles](https://github.com/paulirish/dotfiles/)
+* [Ben Alman's dotfiles installer](https://github.com/cowboy/dotfiles/blob/master/bin/dotfiles)
+* [spf13-vim](https://github.com/spf13/spf13-vim)
 
 ## private config
 
