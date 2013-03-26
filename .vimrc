@@ -460,14 +460,7 @@
         set cursorline                    " Highlight current line
         set number                        " Show line numbers.
 
-
-        if has("gui_gtk2")
-            set guifont=Andale\ Mono\ Regular\ 16,Menlo\ Regular\ 15,Consolas\ Regular\ 16,Courier\ New\ Regular\ 18
-        elseif has("gui_mac")
-            set guifont=Inconsolata:h14,Andale\ Mono\ Regular:h16,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
-        elseif has("gui_win32")
-            set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
-        endif
+        set guifont=Inconsolata:h14,Andale\ Mono\ Regular:h16,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
 
         if has('gui_macvim')
             "macmenu &File.New\ Tab key=<nop>
