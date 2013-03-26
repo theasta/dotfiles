@@ -456,7 +456,7 @@
         set guioptions-=T                 " Hide toolbar.
         set guioptions-=r                 " Don't show right scrollbar
         set background=dark              " Background.
-        set lines=25 columns=100          " Window dimensions.
+        set lines=90 columns=140          " Window dimensions.
         set cursorline                    " Highlight current line
         set number                        " Show line numbers.
 
