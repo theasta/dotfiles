@@ -464,7 +464,6 @@
 
         if has('gui_macvim')
             "macmenu &File.New\ Tab key=<nop>
-            set transparency=5      " Make the window slightly transparent
         endif
 
     else
