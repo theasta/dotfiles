@@ -436,6 +436,9 @@
         if has('conceal')
             set conceallevel=2 concealcursor=i
         endif
+
+        " Disable the neosnippet preview candidate window
+        set completeopt-=preview
     " }
 
     " indent_guides {
