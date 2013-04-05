@@ -208,16 +208,6 @@
     " Adjust viewports to the same size
     map <Leader>= <C-w>=
 
-    " Map <Leader>ff to display all lines with keyword under cursor
-    " and ask which one to jump to
-    nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
-
-    " Easier horizontal scrolling
-    map zl zL
-    map zh zH
-
-    nmap <space> :
-
     " Bubble single lines
     nmap <C-S-Up> <Plug>unimpairedMoveUp
     nmap <C-S-Down> <Plug>unimpairedMoveDown
@@ -239,6 +229,10 @@
     inoremap <leader>; <esc>A;
     nnoremap <leader>; <esc>A;<esc>
 
+    " Substitute all occurences of the word under the cursor
+    nnoremap <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+    nnoremap <leader>bd :Kwbd<cr>
 " }
 
 " Plugins {
@@ -277,18 +271,11 @@
     " }
 
     " NerdTree {
-        map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-        map <leader>e :NERDTreeFind<CR>
         nmap <leader>nt :NERDTreeFind<CR>
 
         let NERDTreeShowBookmarks=1
         let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-        let NERDTreeChDirMode=0
-        let NERDTreeQuitOnOpen=1
-        let NERDTreeMouseMode=2
         let NERDTreeShowHidden=1
-        let NERDTreeKeepTreeInNewTab=1
-        let g:nerdtree_tabs_open_on_gui_startup=0
     " }
 
     " Tabularize {
@@ -324,6 +311,7 @@
 
     " ctrlp {
         noremap <leader>p :CtrlP<cr>
+        noremap <leader>pp :CtrlPBuffer<cr>
         nmap <leader>f :CtrlP<CR><C-\>w
         let g:ctrlp_working_path_mode = ''
         "let g:ctrlp_custom_ignore = {
@@ -380,17 +368,6 @@
         endif
         let g:neocomplcache_keyword_patterns._ = '\h\w*'
 
-        " Plugin key-mappings.
-
-        imap <C-k> <Plug>(neosnippet_expand_or_jump)
-        smap <C-k> <Plug>(neosnippet_expand_or_jump)
-
-        " SuperTab like snippets behavior.
-        imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-        smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-        let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
-
         inoremap <expr><C-g> neocomplcache#undo_completion()
         inoremap <expr><C-l> neocomplcache#complete_common_string()
         inoremap <expr><CR> neocomplcache#complete_common_string()
@@ -425,6 +402,18 @@
         let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
         let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
         let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+
+    " }
+
+    " neosnippet {
+        " Plugin key-mappings.
+
+        imap <C-space> <Plug>(neosnippet_expand_or_jump)
+        smap <C-space> <Plug>(neosnippet_expand_or_jump)
+
+        " SuperTab like snippets behavior.
+        imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+        smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
         " Use my snippets.
         let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
@@ -485,6 +474,18 @@
 " }
 
 " Functions {
+
+    function! <SID>StripTrailingWhitespaces()
+        " Preparation: save last search, and cursor position.
+        let _s=@/
+        let l = line(".")
+        let c = col(".")
+        " Do the business:
+        %s/\s\+$//e
+        " Clean up: restore previous search history, and cursor position
+        let @/=_s
+        call cursor(l, c)
+    endfunction
 
 " }
 
