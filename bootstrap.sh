@@ -108,12 +108,6 @@ if [[ $? != 0 ]] ; then
     brew install wget --enable-iri
 fi
 
-which -s ag
-if [[ $? != 0 ]] ; then
-    e_header 'Installing the_silver_searcher'
-    brew install the_silver_searcher
-fi
-
 which -s ctags
 CTAGS_EXIT=$?
 CTAGS_PATH=$(which ctags)
