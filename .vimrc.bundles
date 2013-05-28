@@ -46,7 +46,7 @@
     " In your .vimrc.bundles.local file"
     " list only the plugin groups you will use
     if !exists('g:spf13_bundle_groups')
-        let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'vimshell', 'javascript', 'node', 'less', 'html', 'misc']
+        let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'javascript', 'node', 'less', 'html', 'misc']
     endif
 
     " General
@@ -93,13 +93,6 @@
         NeoBundle 'Shougo/neocomplcache'
         NeoBundle 'Shougo/neosnippet'
         NeoBundle 'theasta/snipmate-snippets'
-    endif
-
-    " vimshell
-    if count(g:spf13_bundle_groups, 'vimshell')
-        " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-        NeoBundle 'Shougo/vimproc'
-        NeoBundle 'Shougo/vimshell' 
     endif
 
     " Javascript

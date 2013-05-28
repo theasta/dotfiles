@@ -358,7 +358,6 @@
         " Define dictionary.
         let g:neocomplcache_dictionary_filetype_lists = {
                     \ 'default' : '',
-                    \ 'vimshell' : $HOME.'/.vimshell_hist',
                     \ 'scheme' : $HOME.'/.gosh_completions'
                     \ }
 
