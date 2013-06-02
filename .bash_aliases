@@ -4,7 +4,6 @@ alias cd..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
 alias cd-="cd -"
 
 # Shortcuts
@@ -15,16 +14,12 @@ alias v="vim"
 alias m="mvim ."
 alias o="open"
 alias oo="open ."
-alias s='subl .'
-#alias s='open -a "Sublime Text 2" .'
-alias firefox='open -a firefox.app'
-alias chrome='open -a "Google Chrome"'
+alias of='open -a firefox.app'
+alias oc='open -a "Google Chrome"'
 
 
 alias hosts='sudo $EDITOR /etc/hosts'
 alias vhosts='sudo $EDITOR /etc/apache2/extra/httpd-vhosts.conf'
-alias phpini='sudo $EDITOR /etc/php.ini'
-alias httpdconf='sudo $EDITOR /etc/apache2/httpd.conf'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -48,9 +43,6 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
-
-# Gzip-enabled `curl`
-alias gurl="curl --compressed"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
@@ -130,6 +122,8 @@ alias badge="tput bel"
 # For example, to list all directories that contain a certain file:
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
+
+alias lgit="find . -name .git 2>/dev/null | map dirname"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do

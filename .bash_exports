@@ -13,7 +13,7 @@ PATH=$PATH:/bin
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/sbin
 PATH=$PATH:/usr/X11/bin
-PATH=$PATH:/usr/local/mysql/bin
+#PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:~/bin
 
@@ -36,7 +36,7 @@ export EDITOR="vim"
 export MANPAGER="less -X"
 
 # Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
+export HISTSIZE=1976
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
 
@@ -46,7 +46,7 @@ HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
 
 # Make some commands not show up in history
-export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+export HISTIGNORE="ls:cd:cd -:pwd;exit:date:* --help"
 
 #enables color for iTerm
 export TERM=xterm-color
