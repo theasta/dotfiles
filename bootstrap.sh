@@ -92,9 +92,6 @@ if [ ! -d "$HOME/.vim/bundle/neobundle.vim" ]; then
   git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
 
-# vimproc
-# cd $HOME/.vim/bundle/vimproc && make -f make_mac.mak
-
 # if no .vimrc.bundles.local, create one
 if [ ! -f ~/.vimrc.bundles.local ] ; then
     echo "let g:spf13_bundle_groups=['general']" >> ~/.vimrc.bundles.local
@@ -122,11 +119,11 @@ if [[ $? != 0 ]] ; then
     brew install tree
 fi
 
-which -s mongod
-if [[ $? != 0 ]] ; then
-    e_header 'Installing mongodb'
-    brew install mongodb
-fi
+#which -s mongod
+#if [[ $? != 0 ]] ; then
+    #e_header 'Installing mongodb'
+    #brew install mongodb
+#fi
 
 # Remove outdated versions from the cellar
 e_header "Cleaning Homebrew"
@@ -178,11 +175,11 @@ if [[ $? != 0 ]] ; then
   npm install -g grunt-init
 fi
 
-which -s nave
-if [[ $? != 0 ]] ; then
-  e_header 'Installing nave'
-  npm install -g nave
-fi
+#which -s nave
+#if [[ $? != 0 ]] ; then
+  #e_header 'Installing nave'
+  #npm install -g nave
+#fi
 
 which -s volo
 if [[ $? != 0 ]] ; then
@@ -190,11 +187,11 @@ if [[ $? != 0 ]] ; then
   npm install -g volo
 fi
 
-which -s subl
-if [[ $? != 0 ]] ; then
-    e_header 'Symlinking Sublime to subl'
-    ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-fi
+#which -s subl
+#if [[ $? != 0 ]] ; then
+    #e_header 'Symlinking Sublime to subl'
+    #ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+#fi
 
 GOODIES=$HOME/.goodies
 
