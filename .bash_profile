@@ -5,9 +5,6 @@ for file in ~/.{bash_extra,bash_prompt,bash_exports,bash_aliases,bash_functions}
 done
 unset file
 
-# init rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 

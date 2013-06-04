@@ -26,14 +26,6 @@ if [[ $? != 0 ]] ; then
   exit 1
 fi
 
-# If rvm is not installed...
-#which -s rvm
-#if [[ $? != 0 ]] ; then
-  #e_header "Installing RVM"
-  #curl -L https://get.rvm.io | bash -s stable --ruby
-#fi
-
-
 # If brew is not installed
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -97,7 +89,6 @@ if [ ! -f ~/.vimrc.bundles.local ] ; then
     echo "let g:spf13_bundle_groups=['general']" >> ~/.vimrc.bundles.local
     echo "\"let g:spf13_bundle_groups=['general', 'snipmate', 'programming', 'javascript', 'node', 'less', 'html', 'misc']" >> ~/.vimrc.bundles.local
 fi
-
 
 which -s wget
 if [[ $? != 0 ]] ; then
