@@ -27,11 +27,11 @@ if [[ $? != 0 ]] ; then
 fi
 
 # If rvm is not installed...
-which -s rvm
-if [[ $? != 0 ]] ; then
-  e_header "Installing RVM"
-  curl -L https://get.rvm.io | bash -s stable --ruby
-fi
+#which -s rvm
+#if [[ $? != 0 ]] ; then
+  #e_header "Installing RVM"
+  #curl -L https://get.rvm.io | bash -s stable --ruby
+#fi
 
 
 # If brew is not installed
@@ -175,23 +175,11 @@ if [[ $? != 0 ]] ; then
   npm install -g grunt-init
 fi
 
-#which -s nave
-#if [[ $? != 0 ]] ; then
-  #e_header 'Installing nave'
-  #npm install -g nave
-#fi
-
 which -s volo
 if [[ $? != 0 ]] ; then
   e_header 'Installing volo'
   npm install -g volo
 fi
-
-#which -s subl
-#if [[ $? != 0 ]] ; then
-    #e_header 'Symlinking Sublime to subl'
-    #ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-#fi
 
 GOODIES=$HOME/.goodies
 
