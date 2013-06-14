@@ -53,7 +53,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
+alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
 # Enhanced WHOIS lookups
@@ -77,9 +77,6 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 
 # OS X has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
-
-# Trim new lines and copy to clipboard
-alias trimcopy="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
@@ -113,10 +110,6 @@ alias spoton="sudo mdutil -a -i on"
 
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
-
-# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
-# (useful when executing time-consuming commands)
-alias badge="tput bel"
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
