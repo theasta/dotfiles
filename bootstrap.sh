@@ -87,7 +87,7 @@ fi
 # if no .vimrc.bundles.local, create one
 if [ ! -f ~/.vimrc.bundles.local ] ; then
     echo "let g:spf13_bundle_groups=['general']" >> ~/.vimrc.bundles.local
-    echo "\"let g:spf13_bundle_groups=['general', 'snipmate', 'programming', 'javascript', 'node', 'less', 'html', 'misc']" >> ~/.vimrc.bundles.local
+    echo "\"let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'javascript', 'node', 'less', 'html', 'misc']" >> ~/.vimrc.bundles.local
 fi
 
 which -s wget
