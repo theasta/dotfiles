@@ -226,7 +226,6 @@
     nmap <leader>l :set list!<CR>
 
     " ,; appends semicolon to current line
-    inoremap <leader>; <esc>A;
     nnoremap <leader>; <esc>A;<esc>
 
     " Substitute all occurences of the word under the cursor
