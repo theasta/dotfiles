@@ -309,9 +309,10 @@
     " }
 
     " ctrlp {
-        noremap <leader>p :CtrlP<cr>
-        noremap <leader>pp :CtrlPBuffer<cr>
-        nmap <leader>f :CtrlP<CR><C-\>w
+        noremap <leader>p :CtrlPBuffer<cr>
+        noremap <leader>o :CtrlP<cr>
+        noremap <leader>pp :CtrlPMRU<cr>
+        nmap <leader>gf :CtrlP<CR><C-\>w
         let g:ctrlp_working_path_mode = ''
         "let g:ctrlp_custom_ignore = {
             "\ 'dir':  '\vresources$|data$',
