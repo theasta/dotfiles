@@ -56,7 +56,7 @@
         NeoBundle 'tpope/vim-unimpaired'
         NeoBundle 'vim-scripts/sessionman.vim'
         NeoBundle 'edsono/vim-matchit'
-        NeoBundle 'Lokaltog/vim-powerline'
+        NeoBundle 'Lokaltog/powerline'
         NeoBundle 'myusuf3/numbers.vim'
         NeoBundle 'nathanaelkane/vim-indent-guides'
         NeoBundle 'rgarver/Kwbd.vim'
