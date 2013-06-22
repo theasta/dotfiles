@@ -58,7 +58,7 @@
     endtry
 
     set ffs=unix,dos,mac        "Default fileformats : set EOL
-    
+
     if has ('x') && has ('gui') " On Linux use + register for copy-paste
         set clipboard=unnamedplus
     elseif has ('gui')          " On mac and Windows, use * register for copy-paste
@@ -261,7 +261,7 @@
     " }
 
     " Ctags {
-        nmap <leader>ctagsphp :!ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CtrlPClearCache<cr> 
+        nmap <leader>ctagsphp :!ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CtrlPClearCache<cr>
         set tags=./tags;/,~/.vimtags
     " }
 
@@ -309,9 +309,9 @@
     " }
 
     " ctrlp {
-        noremap <leader>p :CtrlPBuffer<cr>
-        noremap <leader>o :CtrlP<cr>
-        noremap <leader>pp :CtrlPMRU<cr>
+        noremap <leader>m :CtrlP<cr>
+        noremap <leader>mm :CtrlPBuffer<cr>
+        noremap <leader>mmm :CtrlPMRU<cr>
         nmap <leader>gf :CtrlP<CR><C-\>w
         let g:ctrlp_working_path_mode = ''
         "let g:ctrlp_custom_ignore = {
