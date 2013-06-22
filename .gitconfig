@@ -27,6 +27,8 @@
 [user]
 	name = Alexandrine Boissière
 	email = theasta@gmail.com
+[github]
+	user = theasta
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
