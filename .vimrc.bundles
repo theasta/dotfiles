@@ -70,7 +70,7 @@
         NeoBundle 'scrooloose/syntastic'
         NeoBundle 'tpope/vim-fugitive'
         NeoBundle 'airblade/vim-gitgutter'
-        "NeoBundle 'mattn/webapi-vim'
+        NeoBundle 'mattn/webapi-vim'
         NeoBundle 'mattn/gist-vim'
         NeoBundle 'scrooloose/nerdcommenter'
         NeoBundle 'godlygeek/tabular'
