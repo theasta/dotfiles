@@ -197,14 +197,6 @@
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
 
-    " Some helpers to edit mode
-    " http://vimcasts.org/e/14
-    cnoremap %% <C-R>=expand('%:h').'/'<cr>
-    map <leader>ew :e %%
-    map <leader>es :sp %%
-    map <leader>ev :vsp %%
-    map <leader>et :tabe %%
-
     " Adjust viewports to the same size
     map <Leader>= <C-w>=
 
@@ -228,7 +220,7 @@
     " ,; appends semicolon to current line
     nnoremap <leader>; <esc>A;<esc>
 
-    " Substitute all occurences of the word under the cursor
+    " Substitute all occurrences of the word under the cursor
     nnoremap <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
     nnoremap <leader>bd :Kwbd<cr>
@@ -239,11 +231,6 @@
     " PIV {
         let g:DisableAutoPHPFolding = 0
         let g:PIVAutoClose = 0
-    " }
-
-    " Misc {
-        let g:NERDShutUp=1
-        let b:match_ignorecase = 1
     " }
 
     " OmniComplete {
@@ -261,20 +248,11 @@
     " }
 
     " Ctags {
-        nmap <leader>ctagsphp :!ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CtrlPClearCache<cr>
         set tags=./tags;/,~/.vimtags
     " }
 
     " SnipMate {
         let g:snips_author = 'Alexandrine Boissiere'
-    " }
-
-    " NerdTree {
-        nmap <leader>nt :NERDTreeFind<CR>
-
-        let NERDTreeShowBookmarks=1
-        let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-        let NERDTreeShowHidden=1
     " }
 
     " Tabularize {
@@ -302,26 +280,23 @@
         nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
     " }
 
-    " PyMode {
-        let g:pymode_lint_checker = "pyflakes"
-        let g:pymode_utils_whitespaces = 0
-        let g:pymode_options = 0
-    " }
-
     " ctrlp {
         noremap <leader>m :CtrlP<cr>
         noremap <leader>mm :CtrlPBuffer<cr>
         noremap <leader>mmm :CtrlPMRU<cr>
         nmap <leader>gf :CtrlP<CR><C-\>w
         let g:ctrlp_working_path_mode = ''
-        "let g:ctrlp_custom_ignore = {
-            "\ 'dir':  '\vresources$|data$',
-            "\ 'file': '\.exe$\|\.so$\|\.dll$' }
     "}
 
     " TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
     "}
+
+    " PyMode {
+        let g:pymode_lint_checker = "pyflakes"
+        let g:pymode_utils_whitespaces = 0
+        let g:pymode_options = 0
+    " }
 
     " PythonMode {
     " Disable if python support not present
@@ -344,97 +319,6 @@
         let g:SuperTabMappingBackward = '<s-c-space>'
         let g:SuperTabMappingTabLiteral = '<tab>'
     "}
-
-    " neocomplcache {
-        let g:acp_enableAtStartup = 0
-        let g:neocomplcache_enable_at_startup = 1
-        let g:neocomplcache_enable_camel_case_completion = 1
-        let g:neocomplcache_enable_smart_case = 1
-        let g:neocomplcache_enable_underbar_completion = 1
-        let g:neocomplcache_enable_auto_delimiter = 1
-        let g:neocomplcache_max_list = 15
-        let g:neocomplcache_force_overwrite_completefunc = 1
-
-        " Define dictionary.
-        let g:neocomplcache_dictionary_filetype_lists = {
-                    \ 'default' : '',
-                    \ 'scheme' : $HOME.'/.gosh_completions'
-                    \ }
-
-        " Define keyword.
-        if !exists('g:neocomplcache_keyword_patterns')
-            let g:neocomplcache_keyword_patterns = {}
-        endif
-        let g:neocomplcache_keyword_patterns._ = '\h\w*'
-
-        inoremap <expr><C-g> neocomplcache#undo_completion()
-        inoremap <expr><CR> neocomplcache#complete_common_string()
-
-        " <TAB>: completion.
-        inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-        inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-
-        " <CR>: close popup
-        " <s-CR>: close popup and save indent.
-        inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup()"\<CR>" : "\<CR>"
-        inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-
-        " <C-h>, <BS>: close popup and delete backward char.
-        inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-
-        " Enable omni completion.
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-        autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-        " Enable heavy omni completion.
-        if !exists('g:neocomplcache_omni_patterns')
-            let g:neocomplcache_omni_patterns = {}
-        endif
-        let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-        let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-        let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-        let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-        let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-
-    " }
-
-    " neosnippet {
-        " Plugin key-mappings.
-
-        imap <C-space> <Plug>(neosnippet_expand_or_jump)
-        smap <C-space> <Plug>(neosnippet_expand_or_jump)
-
-        " SuperTab like snippets behavior.
-        imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-        smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-        " Use my snippets.
-        let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets'
-
-        " Enable neosnippet snipmate compatibility mode
-        " let g:neosnippet#enable_snipmate_compatibility = 1
-
-        " For snippet_complete marker.
-        if has('conceal')
-            set conceallevel=2 concealcursor=i
-        endif
-
-        " Disable the neosnippet preview candidate window
-        set completeopt-=preview
-    " }
-
-    " indent_guides {
-        "let g:indent_guides_auto_colors = 0
-        "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=3
-        "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#404040 ctermbg=4
-        let g:indent_guides_start_level = 2
-        let g:indent_guides_guide_size = 1
-        let g:indent_guides_enable_on_vim_startup = 1
-    " }
 
 " }
 
