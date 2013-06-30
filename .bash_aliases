@@ -16,6 +16,7 @@ alias o="open"
 alias oo="open ."
 alias of='open -a firefox.app'
 alias oc='open -a "Google Chrome"'
+alias gx="open -a GitX ."
 
 
 alias hosts='sudo $EDITOR /etc/hosts'
