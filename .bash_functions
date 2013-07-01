@@ -21,6 +21,12 @@ function mkd() {
 	mkdir -p "$@" && cd "$@"
 }
 
+# send an image to s3 and copy the url
+function 2s3() {
+    s3cmd put —acl-public --guess-mime-type "$1" s3://static.theasta.net/images/
+    echo "http://static.theasta.net/images/$1" | pbcopy;
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
@@ -155,5 +161,5 @@ function extract() {
 
 # find shorthand
 function f() {
-    find . -name "$1"
+    find . -name "$1" 2>/dev/null
 }

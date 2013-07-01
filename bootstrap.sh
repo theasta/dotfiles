@@ -176,8 +176,8 @@ GOODIES=$HOME/.goodies
 
 if [ ! -d "$GOODIES/z" ]; then
   e_header 'Installing z script'
-  mkdir -p $GOODIES/z
-  curl https://raw.github.com/rupa/z/master/z.sh > $GOODIES/z/z.sh
+  mkdir -p $GOODIES
+  git clone https://github.com/rupa/z.git
 fi
 
 if [ ! -d "$GOODIES/spotifyControl" ]; then
