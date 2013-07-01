@@ -1,3 +1,30 @@
 {
-  "laxcomma": true
+  "curly"   : true,
+  "eqeqeq"  : false,
+  "immed"   : true,
+  "latedef" : true,
+  "newcap"  : true,
+  "noarg"   : true,
+  "sub"     : true,
+  "undef"   : true,
+  "unused"  : false,
+  "boss"    : true,
+  "eqnull"  : true,
+  "laxcomma": false,
+  "node"    : true,
+  "browser" : true,
+  "strict"  : true,
+  "globals" : {
+    "define"     : true,
+    "it"         : true,
+    "xit"        : true,
+    "describe"   : true,
+    "xdescribe"  : true,
+    "beforeEach" : true,
+    "afterEach"  : true,
+    "expect"     : true,
+    "spyOn"      : true,
+    "Mustache"   : true
+  }
 }
+
