@@ -125,3 +125,6 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 alias spotify="osascript ~/.goodies/SpotifyControl/SpotifyControl.scpt"
+
+# S3cmd
+alias 2s3="s3cmd sync --delete-removed --recursive --guess-mime-type --acl-public --add-header='Cache-Control:max-age=31536000,public' ~/Dropbox/resources/static.theasta.net/images/ s3://static.theasta.net/images/"
