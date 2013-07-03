@@ -23,8 +23,9 @@ function mkd() {
 
 # send an image to s3 and copy the url
 function 2s3() {
-    s3cmd put —acl-public --guess-mime-type "$1" s3://static.theasta.net/images/
-    echo "http://static.theasta.net/images/$1" | pbcopy;
+  cp $1 ~/Dropbox/resources/static.theasta.net/images/
+  2s3
+  echo "http://static.theasta.net/images/$1" | pbcopy;
 }
 
 # Determine size of a file or total size of a directory
