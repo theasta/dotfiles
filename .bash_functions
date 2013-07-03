@@ -24,7 +24,7 @@ function mkd() {
 # send an image to s3 and copy the url
 function 2s3() {
   cp $1 ~/Dropbox/resources/static.theasta.net/images/
-  2s3
+  s3sync
   echo "http://static.theasta.net/images/$1" | pbcopy;
 }
 
