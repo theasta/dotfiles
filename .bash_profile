@@ -24,6 +24,10 @@ if [ -d "$HOME/.goodies/z" ]; then
   . $HOME/.goodies/z/z.sh
 fi
 
+if [ -f ~/.goodies/git-completion.bash ]; then
+    . ~/.goodies/git-completion.bash
+fi
+
 ## Grunt auto-completion
 which -s grunt
 if [[ $? == 0 ]] ; then

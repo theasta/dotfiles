@@ -2,7 +2,7 @@
 	ci = commit -m
 	st = status -s
 	di = diff --color --color-words --abbrev
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	co = checkout
 [color]
 	ui = always
 [core]
@@ -22,15 +22,10 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[merge]
-	log = true
 [user]
 	name = Alexandrine Boissière
 	email = theasta@gmail.com
-[github]
-	user = theasta
-
-# Any GitHub repo with my username should be checked out r/w by default
-# http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
-[url "git@github.com:theasta/"]
-  insteadOf = "git://github.com/theasta/"
+[branch]
+	autosetuprebase = always
+[push]
+	default = current

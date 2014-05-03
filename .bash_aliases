@@ -7,16 +7,11 @@ alias .....="cd ../../../.."
 alias cd-="cd -"
 
 # Shortcuts
-alias g="git"
 alias h="history"
-alias j="jobs"
-alias v="vim"
-alias m="mvim ."
 alias o="open"
 alias oo="open ."
 alias of='open -a firefox.app'
 alias oc='open -a "Google Chrome"'
-alias gx="open -a GitX ."
 
 
 alias hosts='sudo $EDITOR /etc/hosts'
@@ -104,11 +99,6 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
 alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
-# Disable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-# Enable Spotlight
-alias spoton="sudo mdutil -a -i on"
-
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
@@ -124,7 +114,7 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
 
-alias spotify="osascript ~/.goodies/SpotifyControl/SpotifyControl.scpt"
-
 # S3cmd
 alias s3sync="s3cmd sync --delete-removed --recursive --guess-mime-type --acl-public --add-header='Cache-Control:max-age=31536000,public' ~/Dropbox/resources/static.theasta.net/images/ s3://static.theasta.net/images/"
+
+alias octave="exec '/Applications/Octave.app/Contents/Resources/bin/octave'"
