@@ -7,15 +7,10 @@ alias .....="cd ../../../.."
 alias cd-="cd -"
 
 # Shortcuts
-alias h="history"
-alias o="open"
-alias oo="open ."
 alias of='open -a firefox.app'
 alias oc='open -a "Google Chrome"'
 
-
 alias hosts='sudo $EDITOR /etc/hosts'
-alias vhosts='sudo $EDITOR /etc/apache2/extra/httpd-vhosts.conf'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -118,3 +113,7 @@ done
 alias s3sync="s3cmd sync --delete-removed --recursive --guess-mime-type --acl-public --add-header='Cache-Control:max-age=31536000,public' ~/Dropbox/resources/static.theasta.net/images/ s3://static.theasta.net/images/"
 
 alias octave="exec '/Applications/Octave.app/Contents/Resources/bin/octave'"
+
+alias d8=~/chromium/v8/out/x64.debug/d8
+alias tick-processor=~/chromium/v8/tools/mac-tick-processor
+
