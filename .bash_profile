@@ -34,3 +34,5 @@ if [[ $? == 0 ]] ; then
   eval "$(grunt --completion=bash)"
 fi
 
+# fix EMFILE error
+ulimit -S -n 2048
