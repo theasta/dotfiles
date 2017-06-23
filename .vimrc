@@ -15,32 +15,27 @@
         " The next three lines ensure that the ~/.vim/bundle/ system works
         filetype on
         filetype off
+        filetype plugin indent on     " Required!
+
         if has('vim_starting')
             set runtimepath+=~/.vim/bundle/neobundle.vim/
         endif
         call neobundle#begin(expand('~/.vim/bundle/'))
-        call neobundle#end()
-    " }
-
-" }
-
-" Bundles {
-
-    " Use bundles config {
+        
         if filereadable(expand("~/.vimrc.bundles"))
             source ~/.vimrc.bundles
         endif
+        
+        call neobundle#end()
+
+        " Brief help
+        " :NeoBundleList          - list configured bundles
+        " :NeoBundleInstall(!)    - install(update) bundles
+        " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+        " Installation check.
+        NeoBundleCheck
     " }
-
-    filetype plugin indent on     " Required!
-
-    " Brief help
-    " :NeoBundleList          - list configured bundles
-    " :NeoBundleInstall(!)    - install(update) bundles
-    " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-
-    " Installation check.
-    NeoBundleCheck
 
 " }
 

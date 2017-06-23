@@ -6,25 +6,6 @@
 "
 " }
 
-" Environment {
-    " Basics {
-        set nocompatible        " must be first line
-        set background=dark     " Assume a dark background
-    " }
-
-    " Setup Bundle Support {
-    " The next three lines ensure that the ~/.vim/bundle/ system works
-        filetype on
-        filetype off
-        if has('vim_starting')
-            set runtimepath+=~/.vim/bundle/neobundle.vim/
-        endif
-        call neobundle#begin(expand('~/.vim/bundle/'))
-        call neobundle#end()
-    " }
-
-" }
-
 " Bundles {
     " Deps
         " Let NeoBundle manage NeoBundle
@@ -101,7 +82,6 @@
         NeoBundle 'pangloss/vim-javascript'
         NeoBundle 'briancollins/vim-jst'
         "NeoBundle 'nono/vim-handlebars'
-        "NeoBundle 'kchmck/vim-coffee-script'
         "NeoBundle 'juvenn/mustache.vim'
     endif
 
@@ -125,7 +105,7 @@
     if count(g:spf13_bundle_groups, 'html')
         "NeoBundle 'tpope/vim-ragtag'
         NeoBundle 'hail2u/vim-css3-syntax'
-        NeoBundle 'amirh/HTML-AutoCloseTag'
+        "NeoBundle 'amirh/HTML-AutoCloseTag'
     endif
 
     " PHP
