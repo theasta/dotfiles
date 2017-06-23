@@ -1,5 +1,5 @@
 --type-set
-hs=.js,.php,.html,.ejs
+fe=.js,.html
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=node_modules
