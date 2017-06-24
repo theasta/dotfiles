@@ -17,18 +17,19 @@ brew cask install 1password
 brew cask install evernote
 brew cask install spectacle
 brew cask install rescuetime
-brew cask install alfred
+# brew cask install alfred
 
 # dev
 brew cask install iterm2
 brew cask install virtualbox
+brew cask install webstorm
 brew cask install visual-studio-code
+brew cask install dash
 brew cask install imagealpha
 brew cask install imageoptim
 
 # fun
 brew cask install slack
-brew cask install google-earth
 brew cask install ngrok
 brew cask install skype
 
