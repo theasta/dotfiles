@@ -39,7 +39,12 @@ brew cask install firefox
 # brew cask install torbrowser
 
 # less often
-brew cask install disk-inventory-x
+# brew cask install disk-inventory-x
+
+# quick look
+brew cask install qlmarkdown
+brew cask install quicklook-csv
+brew cask install quicklook-json
 
 # fonts
 brew tap caskroom/fonts 
