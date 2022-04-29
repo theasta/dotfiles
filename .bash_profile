@@ -60,6 +60,10 @@ if  which brew > /dev/null; then
     [ -s $zpath ] && source $zpath
 fi;
 
+# LS_COLORS - github.com/trapd00r/LS_COLORS
+command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
+eval "$(gdircolors -b ~/.dircolors)"
+
 ##
 ## Completion
 ##
