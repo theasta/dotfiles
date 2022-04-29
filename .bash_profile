@@ -1,9 +1,13 @@
-# Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
-# ~/.extra can be used for settings you don’t want to commit
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Load ~/.bash_* files
+# ~/.bash_extra can be used for settings you don’t want to commit
 for file in ~/.{bash_extra,bash_prompt,bash_exports,bash_aliases,bash_functions}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # generic colouriser
 GRC=`which grc`
@@ -50,7 +54,6 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 # Save multi-line commands as one command
 shopt -s cmdhist
 
-
 # z -`brew install z`
 if  which brew > /dev/null; then
     zpath="$(brew --prefix)/etc/profile.d/z.sh"
@@ -65,18 +68,21 @@ if [[ -n "$ZSH_VERSION" ]]; then  # quit now if in zsh
     return 1 2> /dev/null || exit 1;
 fi;
 
+
 # bash completion - `brew install bash_completion`
-if  which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-    source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion;
-fi;
-
-# homebrew completion
-if  which brew > /dev/null; then
-    source "$(brew --prefix)/etc/bash_completion.d/brew"
-fi;
-
+if type brew &>/dev/null
+then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
 
 
 ##
