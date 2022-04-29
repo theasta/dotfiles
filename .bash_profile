@@ -7,8 +7,6 @@ for file in ~/.{bash_extra,bash_prompt,bash_exports,bash_aliases,bash_functions}
 done
 unset file
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # generic colouriser
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n "$GRC" ]
@@ -60,9 +58,9 @@ if  which brew > /dev/null; then
     [ -s $zpath ] && source $zpath
 fi;
 
-# LS_COLORS - github.com/trapd00r/LS_COLORS
-command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
-eval "$(gdircolors -b ~/.dircolors)"
+#### LS_COLORS - github.com/trapd00r/LS_COLORS
+###command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
+###eval "$(gdircolors -b ~/.dircolors)"
 
 ##
 ## Completion
@@ -91,3 +89,7 @@ shopt -s dirspell 2> /dev/null
 
 # Turn on recursive globbing (enables ** to recurse all directories)
 shopt -s globstar 2> /dev/null
+
+# Prefer US English and use UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US"
